@@ -1,6 +1,7 @@
 # deeplabv3
 PyTroch Implementation of DeepLabV3.
 
+Download trained model weights from [here](https://drive.google.com/drive/folders/1ZR9svn9aiiVfMIOQ8kJ_ohvcQplOk4qK?usp=sharing).
 
 ## Generating Masks from Annotations :
 - Download "gtFine_trainvaltest.zip" and "leftImg8bit_trainvaltest.zip" from the [official cityscapes website](https://www.cityscapes-dataset.com/downloads/) and extract them in "./data".
