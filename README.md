@@ -78,10 +78,6 @@ python test_dlv3.py  --backbone "{resnet50/resnet101/resnet152}" --output_stride
   <tr>
     <td><img src="./outputs/cat os8.png" style="width: 100%;"/></td>
   </tr>
-  <tr>
-    <td><img src="./outputs/inf os16.png" style="width: 100%;"/></td>
-    <td><img src="./outputs/inf os8.png" style="width: 100%;"/></td>
-  </tr>
 </table>
 
 Comment: The code saves all the predictions in the directory [outputs/{model_name}](./outputs/) which can be zipped and uploaded to the official evaluation server to get the model performance evaluated.
@@ -98,7 +94,13 @@ Comment: The code saves all the predictions in the directory [outputs/{model_nam
 ## Model Details
 - Memory Requirements of Models:
 ![Memory Requirements of Models](./outputs/mem.png)
+- Average Inference time of DeepLabV3 Resnet-50 Output Stride 8 Model:
+![Average Inference time of DeepLabV3 Resnet-50 Output Stride 8 Model](./outputs/inf%20os8.png)
+- Average Inference time of DeepLabV3 Resnet-50 Output Stride 16 Model:
+![Average Inference time of DeepLabV3 Resnet-50 Output Stride 16 Model](./outputs/inf%20os16.png)
 
 Comment:
-- DeepLabV3 Resnet-50 Output Stride 8 Model requires 17.5 GB VRAM for inference on complete image of size 1024 x 2048.
-- DeepLabV3 Resnet-50 Output Stride 16 Model requires 9.0 GB VRAM for inference on complete image of size 1024 x 2048.
+- DeepLabV3 Resnet-50 Output Stride 8 Model (pid=4059055) requires 2.2 GB VRAM for inference on complete image of size 1024 x 2048.
+- DeepLabV3 Resnet-50 Output Stride 16 Model (pid=4059397) requires 1.3 GB VRAM for inference on complete image of size 1024 x 2048.
+- DeepLabV3 Resnet-50 Output Stride 8 Model takes about 0.19 seconds for inference on complete image of size 1024 x 2048.
+- DeepLabV3 Resnet-50 Output Stride 16 Model takes about 0.12 seconds for inference on complete image of size 1024 x 2048.
