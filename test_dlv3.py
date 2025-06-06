@@ -9,7 +9,7 @@ import torch
 from deeplabv3 import DeepLabV3, convert_trainid_mask
 from cityscapes import get_transforms
 
-DEVICE = 'cuda:1'
+DEVICE = 'cuda'
 torch.cuda.empty_cache()
 
 def inference(model, data_path, save_path, transform):
@@ -63,7 +63,7 @@ def main(cfg):
     inference(model, data_path='./data/leftImg8bit/test/', save_path=f"./outputs/dlv3_os_{cfg['output_stride']}", transform=transform_val_test)
 
 if __name__=="__main__":
-    parser = argparse.ArgumentParser(description="DeepLabV3 Training")
+    parser = argparse.ArgumentParser(description="DeepLabV3 Inference")
     parser.add_argument("--backbone", type=str, required=False, default="resnet50", help="Backbone to use")
     parser.add_argument("--output_stride", type=int, required=False, default=8, help="Set output stride of backbone")
     parser.add_argument("--model_weights_path", type=str, required=True, help="Path to the model weights")
@@ -72,14 +72,11 @@ if __name__=="__main__":
     model_weights_path = args.model_weights_path
     output_stride = args.output_stride
     config = {
-        'ignore_class': 19,
         'train_crop_size': [1024, 1024],
         'norm_mean': [0.485, 0.456, 0.406],
         'norm_std': [0.229, 0.224, 0.225],
         'backbone': backbone,
         'num_classes': 20,
-        'output_stride': output_stride,
-        'backbone': backbone,
         'output_stride': output_stride,
         'model_weights_path': model_weights_path,
     }

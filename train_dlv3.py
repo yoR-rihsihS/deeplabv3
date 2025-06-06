@@ -12,7 +12,7 @@ from torch.amp import GradScaler
 from deeplabv3 import DeepLabV3, FocalLoss, train_one_epoch, evaluate
 from cityscapes import CityScapes, get_transforms
 
-DEVICE = 'cuda:0'
+DEVICE = 'cuda'
 torch.cuda.empty_cache()
 
 def save_file(history, path):
